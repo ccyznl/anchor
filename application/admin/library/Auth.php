@@ -18,5 +18,39 @@ use think\Session;
 
 class Auth extends \fast\Auth {
 
+    /**
+     *
+     */
+    protected $_error = '';
+
+    /**
+     *
+     */
+    protected $requestUri = '';
+
+    /**
+     *
+     */
+    protected $breadCrumb = [];
+
+    /**
+     *
+     */
+    protected $logined = false;
+
+    /**
+     * Auth constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function __get($name)
+    {
+        return Session::get('admin.' . $name);
+    }
+
+
 }
 

@@ -5,3 +5,11 @@
  * Date: 2018/4/9
  * Time: 21:55
  */
+
+namespace app\admin\model;
+
+use think\Model;
+
+class AuthGroupAccess extends Model {
+
+}

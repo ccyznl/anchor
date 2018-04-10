@@ -29,6 +29,32 @@ class AdminRule extends Validate {
      * 提示消息
      */
     protected $message = [
-
+        'name.format'   =>  'URL规则只能是小写字母、数字、下划线和/组成',
     ];
+
+    /**
+     * 字段描述
+     */
+    protected $field = [];
+
+    /**
+     * 验证场景
+     */
+    protected $scene = [];
+
+    /**
+     * AdminRule constructor.
+     * @param array $rules
+     * @param array $message
+     * @param array $field
+     */
+    public function __construct(array $rules = [], $message = [], $field = [])
+    {
+        $this->field = [
+            'name'  =>  __('Name'),
+            'title' =>  __('Title'),
+        ];
+        $this->message['name.format'] = __('Name only support letters, numbers, underscore and slash');
+        parent::__construct($rules, $message, $field);
+    }
 }
